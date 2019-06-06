@@ -34,7 +34,7 @@ var getRandomColor = function () {
   return 'rgba(0, 0, 255, ' + Math.random() + ')';
 };
 
-var printText = function (stringToPrint, ctx) {
+var printText = function (ctx, stringToPrint) {
   var START_TEXT_X = 150;
   var LINE_INDENT = 30;
   var startTextY = -10;
@@ -63,7 +63,7 @@ window.renderStatistics = function (ctx, players, times) {
   ctx.fillStyle = '#000';
   ctx.font = '16px PT Mono';
   ctx.textBaseline = 'top';
-  printText('Ура вы победили!\nСписок результатов:', ctx);
+  printText(ctx, 'Ура вы победили!\nСписок результатов:');
 
   var maxTime = getMaxElement(times);
 
