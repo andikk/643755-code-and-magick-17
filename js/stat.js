@@ -45,7 +45,9 @@ window.renderStatistics = function (ctx, players, times) {
     ctx.fillText(players[i], BAR_HEIGHT + i * (COLUMN_WIDTH + COLUMNS_GAP), PLAYERS_TEXT_Y);
     ctx.fillText(Math.round(times[i]), BAR_HEIGHT + i * (COLUMN_WIDTH + COLUMNS_GAP), TIMES_TEXT_Y_GAP + (BAR_HEIGHT - Math.round(BAR_HEIGHT * times[i]) / maxTime));
     ctx.fillStyle = (players[i] === 'Вы') ? 'rgba(255, 0, 0, 1)' : getRandomColor();
-    ctx.fillRect(BAR_HEIGHT + i * (COLUMN_WIDTH + COLUMNS_GAP), COLUMN_Y_GAP + (BAR_HEIGHT - Math.round(BAR_HEIGHT * times[i] / maxTime)), COLUMN_WIDTH, Math.round(BAR_HEIGHT * times[i]) / maxTime);
+
+    drawColumn(ctx, players, times, i, maxTime);
+
   }
 };
 
@@ -65,4 +67,8 @@ var printText = function (stringToPrint, ctx) {
     ctx.fillText(lines[i], START_TEXT_X, startTextY);
   }
 
+};
+
+var drawColumn = function (ctx, players, times, i, maxTime) {
+  ctx.fillRect(BAR_HEIGHT + i * (COLUMN_WIDTH + COLUMNS_GAP), COLUMN_Y_GAP + (BAR_HEIGHT - Math.round(BAR_HEIGHT * times[i] / maxTime)), COLUMN_WIDTH, Math.round(BAR_HEIGHT * times[i]) / maxTime);
 };
