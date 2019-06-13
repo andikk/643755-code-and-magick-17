@@ -59,4 +59,4 @@ for (var i = 0; i < wizards.length; i++) {
 var setupSimilarList = document.querySelector('.setup-similar-list');
 setupSimilarList.appendChild(fragment);
 
-document.querySelector('.setup-similar').classList.remove('hidden')
+document.querySelector('.setup-similar').classList.remove('hidden');
