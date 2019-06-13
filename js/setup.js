@@ -1,7 +1,6 @@
 'use strict';
 
 var WIZARDS_COUNT = 4;
-var WIZARDS_NAMES_TO_SELECT_COUNT = 7;
 
 var NAMES = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
 var SURNAMES = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
@@ -21,9 +20,9 @@ var createWizards = function () {
 
   for (var i = 1; i <= WIZARDS_COUNT; i++) {
     var wizardToAdd = {
-      'name': NAMES[getRandomInt(WIZARDS_NAMES_TO_SELECT_COUNT)] + ' ' + SURNAMES[getRandomInt(WIZARDS_NAMES_TO_SELECT_COUNT)],
-      'coatColor': COAT_COLOR[getRandomInt(COAT_COLOR.length + 1)],
-      'eyesColor': EYES_COLOR[getRandomInt(EYES_COLOR.length + 1)]
+      'name': NAMES[getRandomInt(NAMES.length)] + ' ' + SURNAMES[getRandomInt(SURNAMES.length)],
+      'coatColor': COAT_COLOR[getRandomInt(COAT_COLOR.length)],
+      'eyesColor': EYES_COLOR[getRandomInt(EYES_COLOR.length)]
     };
 
     wizards.push(wizardToAdd);
@@ -45,7 +44,7 @@ var renderWizzard = function (wizard) {
   wizardCoat.style = 'fill: ' + wizard.coatColor;
 
   var wizardEyes = newWizzard.querySelector('.wizard-eyes');
-  wizardEyes.style = 'fill: ' + wizard.eyesColor;
+  wizardEyes.style.fill = wizard.eyesColor;
 
   return newWizzard;
 };
@@ -60,5 +59,4 @@ for (var i = 0; i < wizards.length; i++) {
 var setupSimilarList = document.querySelector('.setup-similar-list');
 setupSimilarList.appendChild(fragment);
 
-var setupSimilar = document.querySelector('.setup-similar');
-setupSimilar.classList.remove('hidden');
+document.querySelector('.setup-similar').classList.remove('hidden')
