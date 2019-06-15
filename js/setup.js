@@ -41,7 +41,7 @@ var renderWizzard = function (wizard) {
   setupSimilarLabel.textContent = wizard.name;
 
   var wizardCoat = newWizzard.querySelector('.wizard-coat');
-  wizardCoat.style = 'fill: ' + wizard.coatColor;
+  wizardCoat.style.fill = wizard.coatColor;
 
   var wizardEyes = newWizzard.querySelector('.wizard-eyes');
   wizardEyes.style.fill = wizard.eyesColor;
