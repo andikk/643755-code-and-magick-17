@@ -124,7 +124,8 @@ wizardEyes.addEventListener('click', function () {
 
 var fireBall = document.querySelector('.setup-fireball-wrap');
 fireBall.addEventListener('click', function () {
-  fireBall.style.backgroundColor = FIREBALL_COLOR[getRandomInt(FIREBALL_COLOR.length)];
-  document.getElementsByName('fireball-color')[0].value = fireBall.style.backgroundColor;
+  var fireBallColor = FIREBALL_COLOR[getRandomInt(FIREBALL_COLOR.length)];
+  fireBall.style.backgroundColor = fireBallColor;
+  document.getElementsByName('fireball-color')[0].value = fireBallColor;
 });
 
